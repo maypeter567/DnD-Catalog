@@ -1,7 +1,7 @@
 import { defaultClasses } from "../data/classes";
 
 
-export default function Classses() {
+export default function Classes() {
 
     const cards = defaultClasses.filter((item) => item).map((item, index) => (
         <li key={index} className="card">
