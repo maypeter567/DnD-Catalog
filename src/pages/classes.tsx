@@ -1,5 +1,4 @@
-import { defaultClasses } from "../data/classes";
-
+import { defaultClasses } from "../data/Cards";
 
 export default function Classes() {
 
