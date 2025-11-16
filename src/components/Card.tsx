@@ -1,28 +1,23 @@
-
-
 export type Contents = {
-  test_1: string,
-  test_2: string,
+  title: string,
+  description: string,
 }
 
 interface Props {
   content: Contents;
 }
 
-const Card = (props: Props) => {
-
+const Card = ({ content }: Props) => {
   return (
-    <div>
-      <li className="card">
-        <details>
-          <summary>
-            <h3 className="card-title">Example Card</h3>
-          </summary>
-          <p>{props.content.test_1}</p>
-        </details>
-      </li>
-    </div>
-  );
+    <li className="card">
+      <details>
+        <summary className="card-summary">
+          <h3 className="card-title">{content.title}</h3>
+        </summary>
+        <p className="card-description">{content.description}</p>
+      </details>
+    </li>
+  )
 }
 
-export default Card;
+export default Card
