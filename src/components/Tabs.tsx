@@ -1,56 +1,50 @@
-import { useState } from 'react'
+import type { CSSProperties } from "react"
 
-import Cover from '../pages/cover'
-import TableOfContents from '../pages/toc'
-import Bookmarks from '../pages/bookmarks'
-import Races from '../pages/races'
-import Classes from '../pages/classes'
-import Backstory from '../pages/backstory'
-import Spells from '../pages/spells'
-import Monsters from '../pages/monsters'
-import Items from '../pages/items'
+import bookImage from "../assets/background-book.png"
+import { sectionDefinitions, type TabId } from "../data/sections"
 
-export default function Tabs() {
-    const [activeTab, setActiveTab] = useState('home')
+type TabsProps = {
+    activeTab: TabId
+    onSelectTab: (tab: TabId) => void
+}
 
-    function renderTab() {
-        switch (activeTab) {
-            case "toc":
-                return <TableOfContents />;
-            case "bookmarks":
-                return <Bookmarks />;
-            case "races":
-                return <Races />;
-            case "classes":
-                return <Classes />;
-            case "backstory":
-                return <Backstory />;
-            case "spells":
-                return <Spells />;
-            case "monsters":
-                return <Monsters />;
-            case "items":
-                return <Items />;
-            default:
-                return <Cover />;
-        }
-    }
+export default function Tabs({ activeTab, onSelectTab }: TabsProps) {
+    const activeIndex = Math.max(
+        sectionDefinitions.findIndex((section) => section.id === activeTab),
+        0,
+    )
+    const ActiveComponent =
+        sectionDefinitions[activeIndex]?.Component ?? sectionDefinitions[0].Component
+    const overlayTopPercent = 18
+    const overlayBottomPercent = 9
+    const overlayHeightPercent = 100 - (overlayTopPercent + overlayBottomPercent)
 
     return (
-        <div>
-            <div className="tabs">
-                <button onClick={() => setActiveTab("cover")}>Cover</button>
-                <button onClick={() => setActiveTab("toc")}>Table of Contents</button>
-                <button onClick={() => setActiveTab("bookmarks")}>Bookmarks</button>
-                <button onClick={() => setActiveTab("races")}>Races</button>
-                <button onClick={() => setActiveTab("classes")}>Classes</button>
-                <button onClick={() => setActiveTab("backstory")}>Backstory</button>
-                <button onClick={() => setActiveTab("spells")}>Spells</button>
-                <button onClick={() => setActiveTab("monsters")}>Monsters</button>
-                <button onClick={() => setActiveTab("items")}>Items</button>
-            </div>
-            <div className="tab-content">
-                {renderTab()}
+        <div className="book-layout">
+            <div className="book-wrapper">
+                <img src={bookImage} alt="Open book" className="book-image" />
+                <div className="page-overlay">
+                    <ActiveComponent />
+                </div>
+                {sectionDefinitions.map((section, index) => {
+                    const isLeft = index < activeIndex
+                    const slot = (index + 0.5) / sectionDefinitions.length
+                    const topPercent = overlayTopPercent + slot * overlayHeightPercent
+                    const baseStack = sectionDefinitions.length - index
+                    const stackValue = section.id === activeTab ? 50 : baseStack
+                    return (
+                        <button
+                            type="button"
+                            key={section.id}
+                            className={`tab-ribbon ${isLeft ? "left" : "right"}${section.id === activeTab ? " active" : ""}`}
+                            style={{ top: `${topPercent}%`, '--stack': stackValue } as CSSProperties}
+                            onClick={() => onSelectTab(section.id)}
+                            aria-label={`Go to ${section.label}`}
+                        >
+                            <span>{section.label}</span>
+                        </button>
+                    )
+                })}
             </div>
         </div>
     )
