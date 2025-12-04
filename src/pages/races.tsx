@@ -5,9 +5,9 @@ export default function Races() {
         <li key={index} className="card">
             <details>
                 <summary>
-                    <h3 className="card-title">{item.test_1}</h3>
+                    <h3 className="card-title">{item.title}</h3>
                 </summary>
-                <p>{item.test_2}</p>
+                <p>{item.description}</p>
             </details>
         </li>
     ));

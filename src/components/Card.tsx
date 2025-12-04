@@ -1,16 +1,14 @@
-
-
 export type Contents = {
-  test_1: string,
-  test_2: string,
-}
+  title: string;
+  headerBlock?: string;
+  description: string;
+};
 
 interface Props {
   content: Contents;
 }
 
 const Card = (props: Props) => {
-
   return (
     <div>
       <li className="card">
@@ -18,11 +16,11 @@ const Card = (props: Props) => {
           <summary>
             <h3 className="card-title">Example Card</h3>
           </summary>
-          <p>{props.content.test_1}</p>
+          <p>{props.content.title}</p>
         </details>
       </li>
     </div>
   );
-}
+};
 
 export default Card;
