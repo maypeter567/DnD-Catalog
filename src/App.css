@@ -166,7 +166,9 @@ main {
 }
 
 .card .details {
-  background: rgba(255, 255, 255, 0.9);
+  background-image: url("/src/assets/old-page.jpg");
+  background-position: center;
+  background-size: 100% auto;
   border: 1px solid #c9b28b;
   border-radius: .5rem;
   padding: 0.75rem 1rem;
@@ -335,5 +337,4 @@ main {
 
 .text-page {
   width: calc(25%-3em);
-  
 }
