@@ -1,3 +1,13 @@
 export default function Bookmarks() {
-    return <div>Bookmarks Page</div>
+    return (
+        <div className="page-section text-page">
+            <h2>Bookmarks</h2>
+            <p>
+                Save heroes, monsters, or stories you want to revisit. This space will
+            </p>
+            <p>
+                soon track your personal favorites.
+            </p>
+        </div>
+    )
 }

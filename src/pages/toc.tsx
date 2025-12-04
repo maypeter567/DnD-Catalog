@@ -1,23 +1,25 @@
-import { defaultToc } from "../data/Cards";
+import { sectionDefinitions } from "../data/sections"
+import { useTabs } from "../context/TabsContext"
 
 export default function Toc() {
-  const cards = defaultToc
-    .filter((item) => item)
-    .map((item, index) => (
-      <li key={index} className="card">
-        <details>
-          <summary>
-            <h3 className="card-title">{item.title}</h3>
-          </summary>
-          <p>{item.description}</p>
-        </details>
-      </li>
-    ));
+    const { setActiveTab } = useTabs()
+    const linkableSections = sectionDefinitions.filter(
+        (section) => section.id !== "toc",
+    )
 
-  return (
-    <div>
-      <h2>Table of Contents Page</h2>
-      <ul className="cards-list">{cards}</ul>
-    </div>
-  );
+    return (
+        <div className="page-section">
+            <h2>Table of Contents</h2>
+            <p>Select any bookmark below to flip straight to that chapter.</p>
+            <ul className="toc-links">
+                {linkableSections.map((section) => (
+                    <li key={section.id}>
+                        <button type="button" onClick={() => setActiveTab(section.id)}>
+                            <span>{section.label}</span>
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }

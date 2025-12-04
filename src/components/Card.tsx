@@ -8,19 +8,17 @@ interface Props {
   content: Contents;
 }
 
-const Card = (props: Props) => {
+const Card = ({ content }: Props) => {
   return (
-    <div>
-      <li className="card">
-        <details>
-          <summary>
-            <h3 className="card-title">Example Card</h3>
-          </summary>
-          <p>{props.content.title}</p>
-        </details>
-      </li>
-    </div>
-  );
-};
+    <li className="card">
+      <div className="details">
+        <div className="card-summary">
+          <h3 className="card-title">{content.title}</h3>
+        </div>
+        <p className="card-description">{content.description}</p>
+      </div>
+    </li>
+  )
+}
 
-export default Card;
+export default Card

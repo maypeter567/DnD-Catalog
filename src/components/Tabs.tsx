@@ -1,56 +1,42 @@
-import { useState } from 'react'
+import bookImage from "../assets/old-book.png"
+import { sectionDefinitions, type TabId } from "../data/sections"
 
-import Cover from '../pages/cover'
-import TableOfContents from '../pages/toc'
-import Bookmarks from '../pages/bookmarks'
-import Races from '../pages/races'
-import Classes from '../pages/classes'
-import Backstory from '../pages/backstory'
-import Spells from '../pages/spells'
-import Monsters from '../pages/monsters'
-import Items from '../pages/items'
+type TabsProps = {
+    activeTab: TabId
+    onSelectTab: (tab: TabId) => void
+}
 
-export default function Tabs() {
-    const [activeTab, setActiveTab] = useState('home')
+export default function Tabs({ activeTab, onSelectTab }: TabsProps) {
+    const activeIndex = Math.max(
+        sectionDefinitions.findIndex((section) => section.id === activeTab),
+        0,
+    )
 
-    function renderTab() {
-        switch (activeTab) {
-            case "toc":
-                return <TableOfContents />;
-            case "bookmarks":
-                return <Bookmarks />;
-            case "races":
-                return <Races />;
-            case "classes":
-                return <Classes />;
-            case "backstory":
-                return <Backstory />;
-            case "spells":
-                return <Spells />;
-            case "monsters":
-                return <Monsters />;
-            case "items":
-                return <Items />;
-            default:
-                return <Cover />;
-        }
-    }
+    const ActiveComponent =
+        sectionDefinitions[activeIndex]?.Component ?? sectionDefinitions[0].Component
 
     return (
-        <div>
-            <div className="tabs">
-                <button onClick={() => setActiveTab("cover")}>Cover</button>
-                <button onClick={() => setActiveTab("toc")}>Table of Contents</button>
-                <button onClick={() => setActiveTab("bookmarks")}>Bookmarks</button>
-                <button onClick={() => setActiveTab("races")}>Races</button>
-                <button onClick={() => setActiveTab("classes")}>Classes</button>
-                <button onClick={() => setActiveTab("backstory")}>Backstory</button>
-                <button onClick={() => setActiveTab("spells")}>Spells</button>
-                <button onClick={() => setActiveTab("monsters")}>Monsters</button>
-                <button onClick={() => setActiveTab("items")}>Items</button>
-            </div>
-            <div className="tab-content">
-                {renderTab()}
+        <div className="book-layout">
+            <div className="book-wrapper">
+                <img src={bookImage} alt="Open book" className="book-image" />
+
+                <div className="page-overlay">
+                    <ActiveComponent />
+                </div>
+
+                <div className="tabs-right">
+                    {sectionDefinitions.map((section) => (
+                        <button
+                            key={section.id}
+                            type="button"
+                            className={`tab-ribbon ${section.id === activeTab ? "active" : ""}`}
+                            onClick={() => onSelectTab(section.id)}
+                        >
+                            {section.label}
+                        </button>
+                    ))}
+                </div>
+
             </div>
         </div>
     )
