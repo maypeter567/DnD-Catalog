@@ -96,6 +96,9 @@ export default function SearchFairy({ onNavigate }: SearchFairyProps) {
             >
               ×
             </button>
+            <span className="fairy-icon-search" role="img" aria-hidden="true">
+              🧚
+            </span>
             <h3>Ask the Fairy a Question</h3>
             <p className="fairy-helper">
               She will lead you to the page you seek.

@@ -209,18 +209,38 @@ main {
   border: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
-  color: #fff;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(122, 36, 198, 0.524), #4a00e0);
+  color: #ffffffe6;
   padding: 0.75rem 1.25rem;
   border-radius: 999px;
   font-weight: 600;
   box-shadow: 0 8px 20px rgba(74, 0, 224, 0.35);
   z-index: 300;
+  font-size: 1rem;
+}
+
+.fairy-icon {
+  width: 1.25rem;
+  height: 2rem;
+  font-size: 2.5rem;
+  position: relative;
+  top: -.5rem;
+  left: -.6rem;
+}
+
+.fairy-icon-search {
+  width: 1.25rem;
+  height: 9rem;
+  font-size: 7.5rem;
+  position: relative;
+  top: -.5rem;
+  left: -4.5rem;
+  align-self: center;
 }
 
 .fairy-button:hover {
-  transform: translateY(-1px);
+  transform: scale(1.1);
 }
 
 .fairy-modal {
@@ -271,7 +291,7 @@ main {
 
 .fairy-helper {
   margin: 0;
-  color: #d1c4e9;
+  color: #975eff;
 }
 
 .fairy-results {
