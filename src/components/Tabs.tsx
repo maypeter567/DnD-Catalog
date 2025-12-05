@@ -1,4 +1,4 @@
-import bookImage from "../assets/old-book.png"
+import bookImage from "../assets/Scroll.png"
 import { sectionDefinitions, type TabId } from "../data/sections"
 
 type TabsProps = {

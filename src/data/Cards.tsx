@@ -662,6 +662,42 @@ export const defaultRaces: Contents[] = [
 
 export const defaultSpells: Contents[] = [
   {
+    title: "Burning Hands",
+    headerBlock:
+      "1st level evocation\n" +
+      "Casting time: 1 action\n" +
+      "Range: Self (15-foot cone)\n" +
+      "Components: V, S\n" +
+      "Duration: Instantaneous\n" +
+      "Classes: Sorcerer, Wizard\n",
+    description:
+      "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth. Each creature in a 15-foot cone must make a Dexterity saving throw, taking 3d6 fire damage on a failed save or half as much on a successful one. Flammable objects in the area that aren’t being worn or carried ignite. When cast using a higher-level slot, the damage increases by 1d6 for each slot level above 1st.",
+  },
+  {
+    title: "Cure Wounds",
+    headerBlock:
+      "1st level evocation\n" +
+      "Casting time: 1 action\n" +
+      "Range: Touch\n" +
+      "Components: V, S\n" +
+      "Duration: Instantaneous\n" +
+      "Classes: Bard, Cleric, Druid, Paladin, Ranger\n",
+    description:
+      "A creature you touch regains hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs. When cast using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
+  },
+  {
+    title: "Detect Magic",
+    headerBlock:
+      "1st level divination (ritual)\n" +
+      "Casting time: 1 action\n" +
+      "Range: Self (30‑foot radius)\n" +
+      "Components: V, S\n" +
+      "Duration: Concentration, up to 10 minutes\n" +
+      "Classes: Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Warlock, Wizard\n",
+    description:
+      "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic and learn its school of magic. The spell can penetrate most barriers but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead or 3 feet of wood or dirt.",
+  },
+  {
     title: "Fireball",
     headerBlock:
       "3rd level evocation\n" +
@@ -669,10 +705,22 @@ export const defaultSpells: Contents[] = [
       "Range: 150 feet\n" +
       "Components: V, S, M (a tiny ball of bat guano and sulfur)\n" +
       "Duration: Instantaneous\n" +
-      "Classes: Sorcerer, Wizard",
+      "Classes: Sorcerer, Wizard\n",
     description:
-      "A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20‑foot‑radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one. Flammable objects in the area that aren’t being worn or carried start burning.\n\n" +
+      "A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20‑foot‑radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one. Flammable objects in the area that aren’t being worn or carried start burning." +
       "Using a Higher‑Level Spell Slot. The damage increases by 1d6 for each spell slot level above 3.",
+  },
+  {
+    title: "Fly",
+    headerBlock:
+      "3rd level transmutation\n" +
+      "Casting time: 1 action\n" +
+      "Range: Touch\n" +
+      "Components: V, S, M (a wing feather from any bird)\n" +
+      "Duration: Concentration, up to 10 minutes\n" +
+      "Classes: Sorcerer, Warlock, Wizard\n",
+    description:
+      "You touch a willing creature. The target gains a flying speed of 60 feet for the duration. When the spell ends, the target falls if it is still aloft unless it can stop the fall. When cast using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd.",
   },
   {
     title: "Healing Word",
@@ -682,9 +730,21 @@ export const defaultSpells: Contents[] = [
       "Range: 60 feet\n" +
       "Components: V\n" +
       "Duration: Instantaneous\n" +
-      "Classes: Bard, Cleric, Druid",
+      "Classes: Bard, Cleric, Druid\n",
     description:
       "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
+  },
+  {
+    title: "Invisibility",
+    headerBlock:
+      "2nd level illusion\n" +
+      "Casting time: 1 action\n" +
+      "Range: Touch\n" +
+      "Components: V, S, M (an eyelash encased in gum arabic)\n" +
+      "Duration: Concentration, up to 1 hour\n" +
+      "Classes: Bard, Sorcerer, Warlock, Wizard\n",
+    description:
+      "A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target’s person. The spell ends for a target that attacks or casts a spell. When cast using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
   },
   {
     title: "Lightning Bolt",
@@ -694,9 +754,21 @@ export const defaultSpells: Contents[] = [
       "Range: Self (100‑foot line)\n" +
       "Components: V, S, M (a bit of fur and a rod of amber, crystal, or glass)\n" +
       "Duration: Instantaneous\n" +
-      "Classes: Sorcerer, Wizard",
+      "Classes: Sorcerer, Wizard\n",
     description:
       "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much on a successful one. The lightning ignites flammable objects in the area that aren't being worn or carried. When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+  },
+  {
+    title: "Mage Armor",
+    headerBlock:
+      "1st level abjuration\n" +
+      "Casting time: 1 action\n" +
+      "Range: Touch\n" +
+      "Components: V, S, M (a piece of cured leather)\n" +
+      "Duration: 8 hours\n" +
+      "Classes: Sorcerer, Wizard\n",
+    description:
+      "You touch a willing creature who isn’t wearing armor, and a protective magical force surrounds it until the spell ends. The target’s base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.",
   },
   {
     title: "Magic Missile",
@@ -706,7 +778,7 @@ export const defaultSpells: Contents[] = [
       "Range: 120 feet\n" +
       "Components: V, S\n" +
       "Duration: Instantaneous\n" +
-      "Classes: Sorcerer, Wizard, Fighter (Eldritch Knight)",
+      "Classes: Sorcerer, Wizard, Fighter (Eldritch Knight)\n",
     description:
       "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 Force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several. When you cast this spell using a spell slot of 2nd level or higher, the spell creates one additional dart for each slot level above 1st.",
   },
@@ -718,7 +790,7 @@ export const defaultSpells: Contents[] = [
       "Range: Self\n" +
       "Components: V\n" +
       "Duration: Instantaneous\n" +
-      "Classes: Sorcerer, Warlock, Wizard",
+      "Classes: Sorcerer, Warlock, Wizard\n",
     description:
       "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see.",
   },
@@ -730,12 +802,11 @@ export const defaultSpells: Contents[] = [
       "Range: Self\n" +
       "Components: V, S\n" +
       "Duration: 1 round\n" +
-      "Classes: Sorcerer, Wizard",
+      "Classes: Sorcerer, Wizard\n",
     description:
       "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.",
   },
 ];
-
 export const defaultToc: Contents[] = [
   {
     title: "Getting Started",
