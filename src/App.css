@@ -247,12 +247,11 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  background: linear-gradient(135deg, rgba(122, 36, 198, 0.524), #4a00e0);
-  color: #ffffffe6;
+  background-image: url("/src/assets/6005858.jpg");
+  color: #3a2010;
   padding: 0.75rem 1.25rem;
   border-radius: 999px;
   font-weight: 600;
-  box-shadow: 0 8px 20px rgba(74, 0, 224, 0.35);
   z-index: 300;
   font-size: 1rem;
 }
@@ -292,9 +291,10 @@ main {
   z-index: 20;
 }
 
+/* main background */
 .fairy-modal-content {
-  background: #1a1224;
-  color: #f9f6ff;
+  background-image: url("/src/assets/6005858.jpg");
+  color: #3a2010;
   border-radius: 1.25rem;
   width: min(460px, 90vw);
   max-height: 80vh;
@@ -310,25 +310,32 @@ main {
   margin: 1rem 0;
   padding: 0.65rem 0.9rem;
   border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.25);
-  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  background: rgba(0, 0, 0, 0.091);
+  color: #3a2010;
   flex-shrink: 0;
 }
 
+/* the x in the corner */
 .modal-close {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 1.5rem;
+  top: 1.5rem;
   border: none;
   background: none;
-  color: #fff;
+  color: #000000;
   font-size: 1.25rem;
 }
 
+/* Ask the Fair a Question */
 .fairy-helper {
   margin: 0;
-  color: #975eff;
+  color: #3a2010;
+}
+
+/* fairy search bar */
+.fairy-search-bar {
+  color: rgb(151, 0, 0);
 }
 
 .fairy-results {
@@ -407,11 +414,15 @@ main {
 
 .card-divider {
   display: block;
-  height: 2px;             /* subtle thickness */
-  width: 25%;              /* only half the card */
+  height: 2px;
+  /* subtle thickness */
+  width: 25%;
+  /* only half the card */
   margin: 0.25rem 0 0.5rem;
-  background: #8b0000;     /* dark red */
-  border-radius: 1px;      /* soft edges */
-  box-shadow: 0 1px 0 #640000; /* subtle depth */
+  background: #8b0000;
+  /* dark red */
+  border-radius: 1px;
+  /* soft edges */
+  box-shadow: 0 1px 0 #640000;
+  /* subtle depth */
 }
-
