@@ -39,15 +39,14 @@ main {
 
 .scroll-wrapper {
   position: relative;
-  width: min(96vw, 1200px);
+  width: min(92vw, 1000px);
   min-height: 400px;
   margin-inline: auto;
   margin-top: 1rem;
-  background-image: url("/src/assets/old-page.jpg");
+  background-image: url("/src/assets/paperboard-carton-surface-beige-plain.jpg");
   background-position: center;
   background-size: 100% auto;
   border: 1px solid #c8a366;
-  border-radius: 22px;
   padding: 2rem 2.25rem;
   box-shadow:
     0 20px 35px rgba(0, 0, 0, 0.35),
@@ -79,7 +78,7 @@ main {
 
 .tabs-right {
   position: absolute;
-  right: 12px;
+  right: -15%;
   top: 10%;
   display: flex;
   flex-direction: column;
@@ -89,7 +88,7 @@ main {
 
 .tab-ribbon {
   position: relative;
-  background-image: url("/src/assets/old-page.jpg");
+  background-image: url("/src/assets/6005858.jpg");
   background-position: center;
   background-size: cover;
   background-position-y: bottom;
@@ -156,7 +155,7 @@ main {
 .toc-links li button {
   width: 100%;
   border: 1px solid #cfa96c;
-  background-image: url("/src/assets/old-page.jpg");
+  background-image: url("/src/assets/6005858.jpg");
   background-position: center;
   background-size: 100% auto;
   border-radius: 999px;
@@ -177,7 +176,7 @@ main {
 }
 
 .card .details {
-  background-image: url("/src/assets/old-page.jpg");
+  background-image: url("/src/assets/6005858.jpg");
   background-position: center;
   background-size: 100% auto;
   border: 1px solid #c9b28b;
@@ -396,3 +395,14 @@ main {
 .text-page {
   width: calc(25%-3em);
 }
+
+.card-divider {
+  display: block;
+  height: 2px;             /* subtle thickness */
+  width: 25%;              /* only half the card */
+  margin: 0.25rem 0 0.5rem;
+  background: #8b0000;     /* dark red */
+  border-radius: 1px;      /* soft edges */
+  box-shadow: 0 1px 0 #640000; /* subtle depth */
+}
+

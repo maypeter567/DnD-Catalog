@@ -35,7 +35,9 @@ const Card = ({ content }: Props) => {
             {bookmarked ? "★ Bookmarked" : "☆ Bookmark"}
           </button>
         </summary>
+        <span className="card-divider"></span>
         {headerBlock && <p className="card-header">{headerBlock}</p>}
+        <span className="card-divider"></span>
         <p className="card-description">{description}</p>
       </details>
     </li>

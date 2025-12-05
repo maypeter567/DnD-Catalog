@@ -4,7 +4,6 @@ import type { Contents } from "../components/Card"
 import Backstory from "../pages/backstory"
 import Bookmarks from "../pages/bookmarks"
 import Classes from "../pages/classes"
-import Cover from "../pages/cover"
 import Items from "../pages/items"
 import Monsters from "../pages/monsters"
 import Races from "../pages/races"
@@ -21,7 +20,6 @@ import {
 } from "./Cards"
 
 export type TabId =
-  | "cover"
   | "toc"
   | "bookmarks"
   | "races"
@@ -39,7 +37,6 @@ export interface SectionDefinition {
 }
 
 export const sectionDefinitions: SectionDefinition[] = [
-  { id: "cover", label: "Cover", Component: Cover },
   {
     id: "toc",
     label: "Table of Contents",

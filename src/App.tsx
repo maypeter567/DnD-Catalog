@@ -15,6 +15,7 @@ function App() {
       <TabsProvider value={{ activeTab, setActiveTab }}>
         <div className="app-shell">
           <header className="app-header">
+            
             <div>
               <h1>D&amp;D Catalog</h1>
               <p className="subtitle">Flip through lore, legends, and loot.</p>
