@@ -380,6 +380,15 @@ main {
     width: 100%;
   }
 
+  .tabs-right {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 0.75rem;
+  }
+
   .tab-ribbon {
     position: static;
     writing-mode: horizontal-tb;
